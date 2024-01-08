@@ -1,0 +1,98 @@
+{
+	"python.languageServer": "Jedi",
+	"explorer.confirmDelete": false,
+	"security.workspace.trust.untrustedFiles": "open",
+	"liveServer.settings.donotShowInfoMsg": true,
+	"liveServer.settings.donotVerifyTags": true,
+	"explorer.confirmDragAndDrop": false,
+	"editor.formatOnSave": true,
+	"prettier.tabWidth": 4,
+	"prettier.useTabs": true,
+	"prettier.enableDebugLogs": true,
+	"files.autoSave": "onFocusChange",
+	"git.autofetch": true,
+	"terminal.integrated.defaultProfile.windows": "Command Prompt",
+	"prettier.printWidth": 175,
+	"git.enableSmartCommit": true,
+	"git.confirmSync": false,
+	"editor.fontSize": 13,
+	"editor.linkedEditing": true,
+	"git.allowForcePush": true,
+	"editor.formatOnType": true,
+	"typescript.tsserver.experimental.enableProjectDiagnostics": true,
+	"prettier.endOfLine": "auto",
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[css]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[prisma]": {
+		"editor.defaultFormatter": "Prisma.prisma"
+	},
+	"terminal.integrated.fontSize": 14,
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"react-native.packager.port": 19000,
+	"editor.stickyScroll.enabled": true,
+	"workbench.editor.autoLockGroups": {
+		"default": true
+	},
+	"editor.multiCursorModifier": "ctrlCmd",
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"[dart]": {
+		"editor.formatOnSave": true,
+		"editor.formatOnType": true,
+		"editor.selectionHighlight": false,
+		"editor.suggest.snippetsPreventQuickSuggestions": false,
+		"editor.suggestSelection": "first",
+		"editor.tabCompletion": "onlySnippets",
+		"editor.wordBasedSuggestions": "off"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"dart.debugExternalPackageLibraries": false,
+	"dart.debugSdkLibraries": false,
+	"dart.flutterCustomEmulators": [],
+	"workbench.colorTheme": "One Dark Pro Darker",
+	"arduino.additionalUrls": ["https://github.com/esp8266/Arduino", "http://arduino.esp8266.com/stable/package_esp8266com_index.json"],
+	"arduino.commandPath": "arduino-cli",
+	"arduino.path": "/usr/local/Cellar/arduino-cli/0.29.0/bin",
+	"arduino.useArduinoCli": true,
+	"workbench.editorAssociations": {
+		"*.db": "sqlite-viewer.option"
+	},
+	"dart.lineLength": 1000000,
+	"editor.minimap.maxColumn": 150,
+	"debug.console.fontSize": 13,
+	"dart.openDevTools": "flutter",
+	"dart.showInspectorNotificationsForWidgetErrors": false,
+	"dart.warnWhenEditingFilesOutsideWorkspace": false,
+	"python.autoComplete.extraPaths": [],
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.formatOnSaveMode": "modifications",
+	"workbench.productIconTheme": "fluent-icons",
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"editor.unicodeHighlight.invisibleCharacters": false,
+	"editor.unicodeHighlight.ambiguousCharacters": false,
+	"editor.largeFileOptimizations": false,
+	"gitlens.graph.layout": "editor",
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.formatOnPaste": true,
+	"cmake.configureOnOpen": true,
+	"git.ignoreRebaseWarning": true,
+	"vsintellicode.features.python.deepLearning": "enabled",
+	"python.defaultInterpreterPath": "/usr/local/Cellar/python@3.11/3.11.6_1",
+	"react-native-tools.networkInspector.consoleLogsColorTheme": "Dark",
+	"workbench.iconTheme": "material-icon-theme",
+	"terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+}
