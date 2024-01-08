@@ -1,2 +1,0 @@
-dist/node_modules/@vsintellicode/completions-csharp/node_modules/onnxruntime-node/bin/napi-v3/**
-!dist/node_modules/@vsintellicode/completions-csharp/node_modules/onnxruntime-node/bin/napi-v3/linux/arm64/**
