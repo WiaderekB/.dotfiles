@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkhistory_sidebar=self.webpackChunkhistory_sidebar||[]).push([[2223],{2223:(e,t,n)=>{n.r(t),n.d(t,{ReactQueryDevtools:()=>r,ReactQueryDevtoolsPanel:()=>s});const r=function(){return null},s=function(){return null}}}]);
+//# sourceMappingURL=2223.4f90e738da264911.js.map

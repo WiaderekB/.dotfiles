@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunksidebar=self.webpackChunksidebar||[]).push([[3890],{3890:(e,t,a)=>{a.r(t),a.d(t,{default:()=>n}),a(540);var i=a(923),r=a(2322);const n=e=>(0,r.jsx)(i.GenericErrorMessage,{illustration:"illustration-page-not-found",title:`${e.title} are not available right now`,description:"Stay tuned. We are working on it."})}}]);
+//# sourceMappingURL=3890.0732434e20f6af7d.js.map

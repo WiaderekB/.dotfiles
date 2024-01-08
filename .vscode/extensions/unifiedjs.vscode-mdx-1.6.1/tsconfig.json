@@ -1,0 +1,10 @@
+{
+  "extends": "..",
+  "include": ["**/*.js"],
+  "exclude": ["coverage/", "node_modules/", "out/"],
+  "compilerOptions": {
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "noEmit": true
+  }
+}
