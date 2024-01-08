@@ -1,0 +1,225 @@
+# ~/.config/starship.toml
+follow_symlinks = false
+add_newline = false
+command_timeout = 1000
+format = "$os$directory$git_branch$git_status$git_state$aws$buf$c$conda$crystal$dart$elixir$elm$fennel$fossil_branch$golang$guix_shell$haskell$haxe$hg_branch$java$julia$kotlin$lua$meson$nim$nix_shell$nodejs$ocaml$perl$php$pijul_channel$python$rlang$ruby$rust$scala$swift$zig"
+right_format = "$time$sudo$docker_context$kubernetes"
+
+# Drop ugly default prompt characters
+[character]
+success_symbol = ''
+error_symbol = ''
+
+# ---
+
+[os]
+format = '[$symbol](bold white) '   
+disabled = false
+
+# ---
+
+# Left side
+[time]
+disabled = false
+format = '[ $time]($style) '
+time_format = '%R'
+style = "#FFB86C"  # Orange-ish
+
+[sudo]
+style = 'bold #FF5555' # Red
+symbol = ''
+disabled = false
+format = 'as [$symbol sudo]($style) '
+
+[kubernetes]
+format = 'via [󱃾 $context\($namespace\)](bold #BD93F9) ' # Light Purple
+disabled = false
+
+[docker_context]
+style = 'bold #0db7ed' # Blue
+format = 'via [$symbol $context]($style) '
+disabled = false
+symbol = "󰡨"
+
+# Shows current directory
+[directory]
+truncation_symbol = '…/'
+home_symbol = '󰋜 ~'
+read_only_style = '#FF5555' # Red
+read_only = '  '
+format = '[$path]($style)[$read_only]($read_only_style) '
+
+# Shows current git branch
+[git_branch]
+symbol = ''
+format = 'on [$symbol $branch]($style)'
+truncation_symbol = '…/'
+style = '#50FA7B' # Green
+
+# Shows current git status
+[git_status]
+format = '[$all_status$ahead_behind]($style) '
+style = '#50FA7B' # Green
+conflicted = '🏳'
+up_to_date = ''
+untracked = ' '
+ahead = ' ⇡${count}'
+diverged = ' ⇕⇡${ahead_count}⇣${behind_count}'
+behind = ' ⇣${count}'
+stashed = ' '
+modified = ' '
+staged = ' [++\($count\)](#50FA7B)' # Green
+renamed = ' 襁'
+deleted = ' '
+
+# Shows git state
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style)'
+style = '#BD93F9' # Light Purple
+
+# ---
+
+[aws]
+symbol = " "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[crystal]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fennel]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[kotlin]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[meson]
+symbol = "󰔷 "
+
+[nim]
+symbol = "󰆥 "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[ocaml]
+symbol = " "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[pijul_channel]
+symbol = " "
+
+[python]
+symbol = " "
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[swift]
+symbol = " "
+
+[zig]
+symbol = " "
+
+# ---
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = "󰍲 "
