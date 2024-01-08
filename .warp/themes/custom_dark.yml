@@ -1,0 +1,24 @@
+accent: '#8BE9FD'   # Light Blue
+background: '#1E1E1E'   # Dark Gray
+details: darker   # Slightly Darker Gray
+foreground: '#EEEEEE'   # Light Gray
+
+terminal_colors:
+  bright:
+    black: '#555555'   # Dark Gray
+    blue: '#8BE9FD'   # Light Blue
+    cyan: '#61E2FF'   # Another Shade of Light Blue
+    green: '#50FA7B'   # Light Green
+    magenta: '#FF79C6'   # Pinkish
+    red: '#FF5555'   # Light Red
+    white: '#D6D6D6'   # Medium Gray
+    yellow: '#F1FA8C'   # Light Yellow
+  normal:
+    black: '#333333'   # Slightly Darker Gray
+    blue: '#8BE9FD'   # Light Blue
+    cyan: '#61E2FF'   # Another Shade of Light Blue
+    green: '#50FA7B'   # Light Green
+    magenta: '#FF79C6'   # Pinkish
+    red: '#FF5555'   # Light Red
+    white: '#D6D6D6'   # Medium Gray
+    yellow: '#F1FA8C'   # Light Yellow
