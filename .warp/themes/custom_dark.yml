@@ -1,7 +1,7 @@
 accent: '#8BE9FD'   # Light Blue
-background: '#1E1E1E'   # Dark Gray
+background: '#0b0e14'   # Dark Gray
 details: darker   # Slightly Darker Gray
-foreground: '#EEEEEE'   # Light Gray
+foreground: '#bfbdb6'   # Light Gray
 
 terminal_colors:
   bright:
@@ -22,3 +22,4 @@ terminal_colors:
     red: '#FF5555'   # Light Red
     white: '#D6D6D6'   # Medium Gray
     yellow: '#F1FA8C'   # Light Yellow
+

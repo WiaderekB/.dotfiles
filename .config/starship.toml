@@ -13,7 +13,7 @@ error_symbol = ''
 # ---
 
 [os]
-format = '[$symbol](bold white) '   
+format = '[$symbol](bold white) '
 disabled = false
 
 # ---
@@ -54,12 +54,12 @@ format = '[$path]($style)[$read_only]($read_only_style) '
 symbol = ''
 format = 'on [$symbol $branch]($style)'
 truncation_symbol = '…/'
-style = '#50FA7B' # Green
+style = '#FF79C6' # Pinkish
 
 # Shows current git status
 [git_status]
 format = '[$all_status$ahead_behind]($style) '
-style = '#50FA7B' # Green
+style = '#FF79C6' # Pinkish
 conflicted = '🏳'
 up_to_date = ''
 untracked = ' '
