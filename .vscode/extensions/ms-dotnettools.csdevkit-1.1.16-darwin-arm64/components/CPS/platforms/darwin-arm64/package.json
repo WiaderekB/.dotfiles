@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "dependencies": {
+    "@microsoft/msbuild-dependencies.darwin-arm64": "17.8.480-pre",
+    "@microsoft/visualstudio-projectsystem-buildhost-rpc.darwin-arm64": "17.8.480-pre",
+    "@microsoft/visualstudio-projectsystem-buildhost.darwin-arm64": "17.8.480-pre",
+    "@microsoft/visualstudio-projectsystem-server.darwin-arm64": "17.8.480-pre"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://devdiv.visualstudio.com/DevDiv/_git/CPS",
+    "branch": "release/Dev17.8"
+  }
+}
