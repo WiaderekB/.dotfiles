@@ -1,5 +1,6 @@
 Host traugutt
 	HostName traugutt.eu
+	Port 2233
 	User bartek
 	IdentityFile ~/.ssh/id_rsa
 Host home

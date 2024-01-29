@@ -26,17 +26,17 @@ time_format = '%R'
 style = "#FFB86C"  # Orange-ish
 
 [sudo]
-style = 'bold #FF5555' # Red
+style = 'bold #FF6347' # Tomato Red
 symbol = ''
 disabled = false
 format = 'as [$symbol sudo]($style) '
 
 [kubernetes]
-format = 'via [󱃾 $context\($namespace\)](bold #BD93F9) ' # Light Purple
+format = 'via [󱃾 $context\($namespace\)](bold #9370DB) ' # Medium Purple
 disabled = false
 
 [docker_context]
-style = 'bold #0db7ed' # Blue
+style = 'bold #4682B4' # Steel Blue
 format = 'via [$symbol $context]($style) '
 disabled = false
 symbol = "󰡨"
@@ -45,7 +45,8 @@ symbol = "󰡨"
 [directory]
 truncation_symbol = '…/'
 home_symbol = '󰋜 ~'
-read_only_style = '#FF5555' # Red
+style = '#3498db' # Dodger Blue
+read_only_style = '#FF6347' # Tomato Red
 read_only = '  '
 format = '[$path]($style)[$read_only]($read_only_style) '
 
@@ -54,12 +55,12 @@ format = '[$path]($style)[$read_only]($read_only_style) '
 symbol = ''
 format = 'on [$symbol $branch]($style)'
 truncation_symbol = '…/'
-style = '#FF79C6' # Pinkish
+style = '#FF69B4' # Hot Pink
 
 # Shows current git status
 [git_status]
 format = '[$all_status$ahead_behind]($style) '
-style = '#FF5555' # Pinkish
+style = '#FF6347' # Tomato Red
 conflicted = '🏳'
 up_to_date = ''
 untracked = ' '
@@ -68,14 +69,14 @@ diverged = ' ⇕⇡${ahead_count}⇣${behind_count}'
 behind = ' ⇣${count}'
 stashed = ' '
 modified = ' '
-staged = ' [++\($count\)](#FF5555)' # Pinkish
+staged = ' [++\($count\)](#FF6347)' # Tomato Red
 renamed = ' 󰑕'
 deleted = ' '
 
 # Shows git state
 [git_state]
 format = '[\($state( $progress_current of $progress_total)\)]($style)'
-style = '#BD93F9' # Light Purple
+style = '#9370DB' # Medium Purple
 
 # ---
 
