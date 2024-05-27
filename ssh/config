@@ -3,12 +3,16 @@ Host traugutt
 	Port 2233
 	User bartek
 	IdentityFile ~/.ssh/id_rsa
-Host home
+Host insideHome
 	HostName 192.168.1.5
 	User wiaderek
+	IdentityFile ~/.ssh/id_rsa
+Host home
+	HostName ssh.wiaderek.cloud
+	User wiaderek
+	ProxyCommand /usr/local/bin/cloudflared access ssh --hostname %h
 	IdentityFile ~/.ssh/id_rsa
 Host *
   UseKeychain yes
   AddKeysToAgent yes
   IdentityFile ~/.ssh/id_rsa
-
