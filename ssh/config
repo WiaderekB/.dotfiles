@@ -1,12 +1,23 @@
+# Added by OrbStack: 'orb' SSH host for Linux machines
+# This only works if it's at the top of ssh_config (before any Host blocks).
+# Comment this line if you don't want it to be added again.
+Include ~/.orbstack/ssh/config
+
 Host traugutt
 	HostName traugutt.eu
 	Port 2233
 	User bartek
 	IdentityFile ~/.ssh/id_rsa
+	ForwardAgent yes
 Host insideHome
 	HostName 192.168.1.5
 	User wiaderek
 	IdentityFile ~/.ssh/id_rsa
+Host secondTraugutt
+    HostName 10.10.1.2
+    Port 2233
+    User bartek
+    ProxyJump traugutt
 Host home
 	HostName ssh.wiaderek.cloud
 	User wiaderek
@@ -16,3 +27,7 @@ Host *
   UseKeychain yes
   AddKeysToAgent yes
   IdentityFile ~/.ssh/id_rsa
+Host wiaderekServer
+	HostName 192.168.1.7
+	User bartek 
+	IdentityFile ~/.ssh/id_rsa
