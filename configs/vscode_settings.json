@@ -94,5 +94,5 @@
 	"python.defaultInterpreterPath": "/usr/local/Cellar/python@3.11/3.11.6_1",
 	"react-native-tools.networkInspector.consoleLogsColorTheme": "Dark",
 	"workbench.iconTheme": "material-icon-theme",
-	"terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+	"terminal.integrated.fontFamily": "Hack Nerd Font Mono"
 }

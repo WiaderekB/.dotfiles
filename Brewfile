@@ -14,8 +14,8 @@ brew "openssl@3"
 brew "asdf"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-# Small static webserver without CGI
-brew "darkhttpd"
+# Cloudflare Tunnel client (formerly Argo Tunnel)
+brew "cloudflared"
 # Pack, ship and run any application as a lightweight container
 brew "docker"
 # Isolated development environments using Docker
@@ -28,6 +28,16 @@ brew "erlang@25"
 brew "eza"
 # Free lossless audio codec
 brew "flac"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Subtitle renderer for the ASS/SSA subtitle format
+brew "libass"
+# Framework for layout and rendering of i18n text
+brew "pango"
+# OCR (Optical Character Recognition) engine
+brew "tesseract"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
 # User-friendly command-line shell for UNIX-like operating systems
 brew "fish"
 # Command-line fuzzy finder written in Go
@@ -38,10 +48,11 @@ brew "gh"
 brew "gnupg"
 # Fast linters runner for Go
 brew "golangci-lint"
+# Colorize logfiles and command output
+brew "grc"
 # C websockets server library
 brew "libwebsockets"
 # Clone of ls with colorful output, file type icons, and more
-brew "lsd"
 # Message broker implementing the MQTT protocol
 brew "mosquitto"
 # Media player based on MPlayer and mplayer2
@@ -52,6 +63,12 @@ brew "neovim"
 brew "nmap"
 # Cross-platform library for audio I/O
 brew "portaudio"
+# Object-relational database system
+brew "postgresql@14"
+# Object-relational database system
+brew "postgresql@15"
+# Object-relational database system
+brew "postgresql@16"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.11"
 # Proxy server that works as a poor man's VPN
