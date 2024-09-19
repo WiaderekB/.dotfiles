@@ -1,0 +1,141 @@
+#!/usr/bin/env bash
+LOG="${HOME}/.logs/dotfiles.log"
+GITHUB_USER="wiaderekb"
+GITHUB_REPO=".dotfiles"
+USER_GIT_AUTHOR_NAME="wiaderekb"
+USER_GIT_AUTHOR_EMAIL="64980866+WiaderekB@users.noreply.github.com"
+DIR="/usr/local/${GITHUB_REPO}"
+
+_process() {
+    echo "$(date) PROCESSING:  $@" >> $LOG
+    printf "$(tput setaf 6) %s...$(tput sgr0)\n" "$@"
+}
+
+_success() {
+  local message=$1
+  printf "%s✓ Success:%s\n" "$(tput setaf 2)" "$(tput sgr0) $message"
+}
+
+download_dotfiles() {
+    _process "→ Creating directory at ${DIR} and setting permissions"
+    sudo mkdir -p "${DIR}"
+
+    _process "→ Downloading repository to /tmp directory"
+    curl -#fLo /tmp/${GITHUB_REPO}.tar.gz "https://github.com/${GITHUB_USER}/${GITHUB_REPO}/tarball/main"
+
+    _process "→ Extracting files to ${DIR}"
+    sudo tar -zxf /tmp/${GITHUB_REPO}.tar.gz --strip-components 1 -C "${DIR}"
+
+    _process "→ Removing tarball from /tmp directory"
+    rm -rf /tmp/${GITHUB_REPO}.tar.gz
+
+    [[ $? -eq 0 ]] && _success "${DIR} created, repository downloaded and extracted"
+
+    # Change to the dotfiles directory
+    cd "${DIR}"
+}
+
+link_dotfiles() {
+    # symlink files to the HOME directory.
+    if [[ -f "${DIR}/opt/files" ]]; then
+        _process "→ Symlinking dotfiles in /configs"
+
+        # Set variable for list of files
+        files="${DIR}/opt/files"
+
+        # Store IFS separator within a temp variable
+        OIFS=$IFS
+        # Set the separator to a carriage return & a new line break
+        # read in passed-in file and store as an array
+        IFS=$'\r\n'
+        links=($(cat "${files}"))
+
+        # Loop through array of files
+        for index in ${!links[*]}
+        do
+            for link in ${links[$index]}
+            do
+                _process "→ Linking ${links[$index]}"
+                # set IFS back to space to split string on
+                IFS=$' '
+                # create an array of line items
+                file=(${links[$index]})
+                # Create symbolic link
+                ln -fs "${DIR}/${file[0]}" "${HOME}/${file[1]}"
+            done
+            # set separater back to carriage return & new line break
+            IFS=$'\r\n'
+        done
+
+        # Reset IFS back
+        IFS=$OIFS
+
+        source "${HOME}/.bashrc"
+        [[ $? -eq 0 ]] && _success "All files have been copied"
+    fi
+}
+
+install_node() {
+  if ! type -P 'npm' &> /dev/null; then
+    _process "→ Installing Node.js and npm"
+    
+    # Install Node.js using DNF (Fedora package manager)
+    sudo dnf install -y nodejs npm
+
+    [[ $? -eq 0 ]] && _success "Installed Node.js and npm"
+  fi
+}
+
+install_formulae() {
+  if ! type -P 'dnf' &> /dev/null; then
+    _error "DNF package manager not found"
+  else
+    _process "→ Installing required DNF packages"
+
+    # Set variable for list of DNF packages
+    packages="${DIR}/opt/dnf_packages"
+
+    # Read and install the packages listed
+    _process "→ Installing packages listed in ${packages}"
+    sudo dnf install -y $(cat "${packages}")
+
+    [[ $? -eq 0 ]] && _success "All packages installed"
+  fi
+}
+
+setup_git_authorship() {
+  GIT_AUTHOR_NAME=$(git config --global user.name)
+  GIT_AUTHOR_EMAIL=$(git config --global user.email)
+
+  if [[ -z "$GIT_AUTHOR_NAME" ]]; then
+    _process "→ Setting up Git author"
+
+    read -p "Enter Git author name: " USER_GIT_AUTHOR_NAME
+    if [[ ! -z "$USER_GIT_AUTHOR_NAME" ]]; then
+      GIT_AUTHOR_NAME="${USER_GIT_AUTHOR_NAME}"
+      git config --global user.name "$GIT_AUTHOR_NAME"
+    else
+      _warning "No Git user name has been set.  Please update manually"
+    fi
+
+    read -p "Enter Git author email: " USER_GIT_AUTHOR_EMAIL
+    if [[ ! -z "$USER_GIT_AUTHOR_EMAIL" ]]; then
+      GIT_AUTHOR_EMAIL="${USER_GIT_AUTHOR_EMAIL}"
+      git config --global user.email "$GIT_AUTHOR_EMAIL"
+    else
+      _warning "No Git user email has been set.  Please update manually"
+    fi
+  else
+    _process "→ Git author already set, moving on..."
+  fi
+}
+
+install() {
+  download_dotfiles
+  link_dotfiles
+  install_node
+  install_formulae
+  setup_git_authorship
+}
+
+install

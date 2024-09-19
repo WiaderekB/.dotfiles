@@ -14,12 +14,12 @@ plugins=(git sudo web-search zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
+alias cat="bat"
+alias ni="nvim"
 alias ls="eza --icons"
 alias la="eza -la --icons"
 alias grep="grep --color"
 alias nmap="grc nmap"
-alias lspci="grc lspci"
-alias lsblk="grc lsblk"
 alias "##"="sudo su"
 
 # Starship prompt initialization
