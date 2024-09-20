@@ -8,7 +8,8 @@ export GOPATH="$HOME/go"
 export PATH=$PATH:$GOPATH/bin
 
 # Aliases
-alias cat="bat"
+alias cat="bat"t
+alias tree="eza --tree '--level=2' --icons"
 alias ni="nvim"
 alias ls="eza --icons"
 alias la="eza -la --icons"
