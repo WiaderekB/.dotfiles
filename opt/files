@@ -3,5 +3,5 @@ configs/ssh_config ~/.ssh/config
 configs/.zshrc ~/.zshrc
 configs/.gitconfig ~/.gitconfig
 configs/vscode_settings.json ~/.vscode/settings.json
-nvim ~/.config/nvim
+./nvim/ ~/.config/nvim/
 rsa/id_rsa.pub ~/.ssh/id_rsa.pub

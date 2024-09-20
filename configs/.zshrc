@@ -8,7 +8,7 @@ export GOPATH="$HOME/go"
 export PATH=$PATH:$GOPATH/bin
 
 # Aliases
-alias cat="bat"t
+alias cat="bat"
 alias tree="eza --tree '--level=2' --icons"
 alias ni="nvim"
 alias ls="eza --icons"
@@ -91,6 +91,8 @@ mf () {
   preexec () {}
 }
 mf
+
+export PROMPT_TYPE=local
 
 # Extra configurations
 [[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh

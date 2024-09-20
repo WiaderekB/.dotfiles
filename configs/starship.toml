@@ -1,21 +1,103 @@
 # ~/.config/starship.toml
 follow_symlinks = false
-add_newline = false
+# add_newline = false
 command_timeout = 1000
-format = "$os$directory$git_branch$git_status$git_state$aws$buf$c$conda$crystal$dart$elixir$elm$fennel$fossil_branch$golang$guix_shell$haskell$haxe$hg_branch$java$julia$kotlin$lua$meson$nim$nix_shell$nodejs$ocaml$perl$php$pijul_channel$python$rlang$ruby$rust$scala$swift$zig"
-right_format = "$time$sudo$docker_context$kubernetes"
 
-# Drop ugly default prompt characters
+format = '''╭╴ $hostname$os$directory$git_branch$git_status$git_state$aws$buf$c$conda$crystal$dart$elixir$elm$fennel$fossil_branch$golang$guix_shell$haskell$haxe$hg_branch$java$julia$kotlin$lua$meson$nim$nix_shell$nodejs$ocaml$perl$php$pijul_channel$python$rlang$ruby$rust$scala$swift$zig$fill$time$sudo$docker_context$kubernetes
+$character'''
+right_format = '$memory_usage$battery$localip'
+
+[fill]
+symbol = ' '
+
 [character]
-success_symbol = ''
-error_symbol = ''
+format = '$symbol '
+success_symbol = "╰⎯"
+error_symbol = "╰⎯"
+disabled = false
 
+# ---
+[hostname]
+ssh_only = true
+format = '[󰒋 SSH: ]($style)'
+style =   'bold #708090'
+disabled = false
+
+[localip]
+ssh_only = true
+format = '| 󰩟 [$localipv4]($style) '
+style = '#FF79C6' # Light Green
+disabled = false
 # ---
 
 [os]
 format = '[$symbol](bold white) '
 disabled = false
 
+[battery]
+full_symbol = '󰁹 '  # Icon for full battery
+charging_symbol = '󰂄 '  # Icon for charging battery
+unknown_symbol = '󰂃 '  # Icon for unknown battery state
+empty_symbol = '󰂎 '  # Icon for empty battery
+format = '[$symbol$percentage]($style) '  # Format for the battery display
+disabled = false  # Enables the battery module
+
+[[battery.display]]
+threshold = 10
+style = '#FF5555'
+discharging_symbol = '󰁺 '
+
+[[battery.display]]
+threshold = 20
+style = '#F1FA8C'
+discharging_symbol = '󰁻 '
+
+[[battery.display]]
+threshold = 30
+style = '#FFB86C'
+discharging_symbol = '󰁼 '
+
+[[battery.display]]
+threshold = 40
+style = '#FFB86C'
+discharging_symbol = '󰁽 '
+
+[[battery.display]]
+threshold = 50
+style = '#50FA7B'
+discharging_symbol = '󰁾 '
+
+[[battery.display]]
+threshold = 60
+style = '#61E2FF'
+discharging_symbol = '󰁿 '
+
+[[battery.display]]
+threshold = 70
+style = '#8BE9FD'
+discharging_symbol = '󰂀 '
+
+[[battery.display]]
+threshold = 80
+style = '#6272A4'
+discharging_symbol = '󰂁 '
+
+[[battery.display]]
+threshold = 90
+style = '#BD93F9'
+discharging_symbol = '󰂂 '
+
+[[battery.display]]
+threshold = 100
+style = '#BD93F9'
+discharging_symbol = '󰁹 '
+
+[memory_usage]
+disabled = false
+threshold = 75  # Hide memory usage unless it exceeds this percentage
+symbol = '󰓅'  # Hack icon used before displaying memory usage
+style = '#6272A4'  # Light Green
+format = '[$symbol ${ram_pct} ]($style)'  # Display percentage of RAM usage only
 # ---
 
 # Left side
