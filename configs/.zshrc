@@ -7,12 +7,6 @@ export PATH="/usr/local/sbin:$PATH"
 export GOPATH="$HOME/go"
 export PATH=$PATH:$GOPATH/bin
 
-# Oh-My-Zsh configuration
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME=""
-plugins=(git sudo web-search zsh-autosuggestions)
-source $ZSH/oh-my-zsh.sh
-
 # Aliases
 alias cat="bat"
 alias ni="nvim"
@@ -28,12 +22,6 @@ eval "$(starship init zsh)"
 # Custom VM options for JetBrains tools
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"
 if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
-
-# Key bindings
-bindkey -v
-bindkey -M emacs '\e\e' sudo-command-line
-bindkey -M vicmd '\e\e' sudo-command-line
-bindkey -M viins '\e\e' sudo-command-line
 
 # sudo-command-line function
 sudo-command-line() {

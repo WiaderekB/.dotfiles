@@ -1,6 +1,7 @@
-configs/starship.toml .config/starship.toml
-configs/ssh_config .ssh/config
-configs/.zshrc .zshrc
-configs/.gitconfig .gitconfig
-configs/vscode_settings.json .vscode/settings.json
-rsa/id_rsa.pub .ssh/id_rsa.pub
+configs/.zshrc ~/.zshrc
+configs/starship.toml ~/.config/starship.toml
+configs/ssh_config ~/.ssh/config
+configs/.gitconfig ~/.gitconfig
+configs/vscode_settings.json ~/.vscode/settings.json
+configs/nvim ~/.config/nvim
+rsa/id_rsa.pub ~/.ssh/id_rsa.pub
