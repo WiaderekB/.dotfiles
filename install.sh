@@ -90,6 +90,7 @@ link_dotfiles() {
     while IFS= read -r line; do
         src=$(echo $line | awk '{print $1}')
         dest=$(echo $line | awk '{print $2}')
+        mkdir -p "$(dirname "${dest/\~/$HOME}")"
         ln -fs "$DOTFILES_DIR/$src" "${dest/\~/$HOME}"
         log "Linked $src to $dest"
     done < "$FILES_FILE"
@@ -145,6 +146,9 @@ main() {
 
     log "Setting up cron job"
     setup_cron
+
+    log "Changing default shell to Zsh"
+    chsh -s $(which zsh)  
 
     log "Setup complete"
 }
