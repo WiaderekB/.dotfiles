@@ -12,16 +12,16 @@ Host traugutt
 	IdentityFile ~/.ssh/id_rsa
 	ForwardAgent yes
 
-Host insideHome
+Host aurahub
 	HostName 192.168.1.7
 	User bartek
 	IdentityFile ~/.ssh/id_rsa
 
 Host secondTraugutt
-    HostName 10.10.1.2
-    Port 2233
-    User bartek
-    ProxyJump traugutt
+  HostName 10.10.1.2
+  Port 2233
+  User bartek
+  ProxyJump traugutt
 
 Host *
   UseKeychain yes

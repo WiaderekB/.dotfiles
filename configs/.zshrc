@@ -22,9 +22,10 @@ export KEYTIMEOUT=1
 
 # Function for clearing and file listing (optional, lightweight version)
 fm() {
-  clear
-  precmd() { eza -lah }
-  preexec() { clear }
+  clear;
+  precmd() { eza -lah; };
+  preexec() { clear; };
 }
+
 mf() { precmd() {}; preexec() {}; } # Disable `fm` functionality
 mf  
