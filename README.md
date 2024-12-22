@@ -1,5 +1,6 @@
 # .dotfiles
 
 ```sh
-bash -c "$(curl -#fL raw.github.com/wiaderekb/.dotfiles/main/install)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/wiaderekb/.dotfiles/main/install.sh)"
 ```
+
