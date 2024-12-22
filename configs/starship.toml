@@ -3,7 +3,7 @@ follow_symlinks = false
 # add_newline = false
 command_timeout = 1000
 
-format = '''╭╴ $hostname$os$directory$git_branch$git_status$git_state$aws$buf$c$conda$crystal$dart$elixir$elm$fennel$fossil_branch$golang$guix_shell$haskell$haxe$hg_branch$java$julia$kotlin$lua$meson$nim$nix_shell$nodejs$ocaml$perl$php$pijul_channel$python$rlang$ruby$rust$scala$swift$zig$fill$time$sudo$docker_context$kubernetes$battery
+format = '''╭╴ $hostname$os$directory$git_branch$git_status$git_state$aws$buf$c$conda$crystal$dart$elixir$elm$fennel$fossil_branch$golang$guix_shell$haskell$haxe$hg_branch$java$julia$kotlin$lua$meson$nim$nix_shell$nodejs$ocaml$perl$php$pijul_channel$python$rlang$ruby$rust$scala$swift$zig$fill$time$sudo$docker_context$kubernetes
 $character'''
 [fill]
 symbol = ' '
@@ -24,60 +24,6 @@ disabled = false
 [os]
 format = '[$symbol ](bold white)'
 disabled = false
-
-[battery]
-full_symbol = '󰁹 '  # Icon for full battery
-charging_symbol = '󰂄 '  # Icon for charging battery
-unknown_symbol = '󰂃 '  # Icon for unknown battery state
-empty_symbol = '󰂎 '  # Icon for empty battery
-format = '| [$symbol$percentage]($style) '  # Format for the battery display
-disabled = false  # Enables the battery module
-
-[[battery.display]]
-threshold = 10
-style = '#FF5555'
-discharging_symbol = '󰁺 '
-
-[[battery.display]]
-threshold = 20
-style = '#F1FA8C'
-discharging_symbol = '󰁻 '
-
-[[battery.display]]
-threshold = 30
-style = '#FFB86C'
-discharging_symbol = '󰁼 '
-
-[[battery.display]]
-threshold = 40
-style = '#FFB86C'
-discharging_symbol = '󰁽 '
-
-[[battery.display]]
-threshold = 50
-style = '#50FA7B'
-discharging_symbol = '󰁾 '
-
-[[battery.display]]
-threshold = 60
-style = '#61E2FF'
-discharging_symbol = '󰁿 '
-
-[[battery.display]]
-threshold = 70
-style = '#8BE9FD'
-discharging_symbol = '󰂀 '
-
-[[battery.display]]
-threshold = 80
-style = '#6272A4'
-discharging_symbol = '󰂁 '
-
-[[battery.display]]
-threshold = 90
-style = '#BD93F9'
-discharging_symbol = '󰂂 '
-# ---
 
 # Left side
 [time]
