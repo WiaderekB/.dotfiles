@@ -1,28 +1,22 @@
-Host traugutt_docker
-	HostName 10.10.1.1
-	Port 2233
-	User root
-	IdentityFile ~/.ssh/id_rsa
-	ForwardAgent yes
-
-Host traugutt
+Host ts
 	HostName traugutt.net
 	Port 2233
 	User root 
-	IdentityFile ~/.ssh/id_rsa
 	ForwardAgent yes
 
 Host aurahub
 	HostName 192.168.1.7
 	User bartek
-	IdentityFile ~/.ssh/id_rsa
 
-Host secondTraugutt
+Host dc
   HostName 10.10.1.2
-  Port 2233
   User bartek
-  ProxyJump traugutt
+  ProxyJump ts
 
+Host homeserver
+  HostName 192.168.1.100
+  User root
+  
 Host *
   UseKeychain yes
   AddKeysToAgent yes
