@@ -1,0 +1,50 @@
+# Window
+window-decoration = auto
+macos-titlebar-style = tabs
+fullscreen = false
+window-save-state = never
+
+# Typography
+font-family = Hack Nerd Font Mono
+font-style = Regular
+font-size = 13.5
+
+# Base colors
+background = #181f2c
+foreground = #d0d7e4
+
+# ANSI normal colors (0-7)
+palette = 0=#3b3b3b
+palette = 1=#e35535
+palette = 2=#3cec85
+palette = 3=#eacd61
+palette = 4=#69c3ff
+palette = 5=#f38cec
+palette = 6=#6bc5c5
+palette = 7=#d0d7e4
+
+# ANSI bright colors (8-15)
+palette = 8=#7d7d7d
+palette = 9=#ff7c7c
+palette = 10=#b1d463
+palette = 11=#feca88
+palette = 12=#9cc8e5
+palette = 13=#d09eda
+palette = 14=#b1e4e4
+palette = 15=#ffffff
+
+faint-opacity = 0.65
+minimum-contrast = 1.1
+mouse-hide-while-typing = true
+
+# Cursor
+cursor-style = bar
+cursor-style-blink = true
+cursor-color = #1e90ff
+cursor-text = #181f2c
+
+# Search
+search-foreground = #d8d8d8
+search-background = #5c7f7f
+search-selected-foreground = #181818
+search-selected-background = #ffb84d

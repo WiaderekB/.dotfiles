@@ -1,42 +1,34 @@
+# Interactive shell configuration.
+[[ -o interactive ]] || return
 
-# Aliases
-alias cat="bat --color always"
-alias ls="eza --icons"
-alias la="eza -la --icons"
-alias tree="eza --tree --level=2 --icons"
-alias grep="grep --color"
-alias ni="nvim"
-alias f="fzf --preview 'bat --color=always {}' --height 40% --layout=reverse --border"
-alias c="clear"
-alias copy="pbcopy <"
+if (( $+commands[bat] )); then
+  alias cat='bat --color=always'
+fi
 
-fh() {
-  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
-}
+if (( $+commands[eza] )); then
+  alias ls='eza --icons'
+  alias la='eza -la --icons'
+  alias tree='eza --tree --level=2 --icons'
+fi
 
-fd() {
-  local dir
-  dir=$(find ${1:-.} -path '*/\.*' -prune \
-                  -o -type d -print 2> /dev/null | fzf +m) &&
-  cd "$dir"
-}
+alias grep='grep --color=auto'
 
-# Starship prompt initialization
-eval "$(starship init zsh)"
+if (( $+commands[fzf] )); then
+  source <(fzf --zsh)
+fi
 
-source <(fzf --zsh)
+if (( $+commands[starship] )); then
+  eval "$(starship init zsh)"
+fi
 
-# Vi mode
 bindkey -v
 export KEYTIMEOUT=1
 
-# Function for clearing and file listing (optional, lightweight version)
-fm() {
-  clear;
-  precmd() { eza -lah; };
-  preexec() { clear; };
-}
-
-mf() { precmd() {}; preexec() {}; } # Disable `fm` functionality
-mf  source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+homebrew_prefix="${HOMEBREW_PREFIX:-}"
+if [[ -n "$homebrew_prefix" ]]; then
+  [[ -r "$homebrew_prefix/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] && \
+    source "$homebrew_prefix/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  [[ -r "$homebrew_prefix/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && \
+    source "$homebrew_prefix/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+fi
+unset homebrew_prefix

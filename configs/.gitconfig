@@ -1,20 +1,11 @@
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
 [user]
 	name = Bartosz Wiaderek
 	email = 64980866+WiaderekB@users.noreply.github.com
 [init]
-	defaultBranch = master
+	defaultBranch = main
 [core]
-	excludesfile = /Users/bartoszwiaderek/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /private/var/folders/fg/ctfc22p16g56l6q7_f7c1s800000gn/T/AppTranslocation/AAF41E83-14F1-4C88-A723-BBD75F2CC8F3/d/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[commit]
-	template = /Users/bartoszwiaderek/.stCommitMsg
+	excludesfile = ~/.config/git/ignore
+[fetch]
+	prune = true
+[pull]
+	ff = only

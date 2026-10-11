@@ -1,12 +1,12 @@
 Host ts
-	HostName traugutt.net
-	Port 2233
-	User root 
-	ForwardAgent yes
+  HostName traugutt.net
+  Port 2233
+  User root
+  ForwardAgent yes
 
 Host aurahub
-	HostName 192.168.1.7
-	User bartek
+  HostName 192.168.1.7
+  User bartek
 
 Host dc
   HostName 10.10.1.2
@@ -16,8 +16,7 @@ Host dc
 Host homeserver
   HostName 192.168.1.100
   User root
-  
+
 Host *
-  UseKeychain yes
   AddKeysToAgent yes
-  IdentityFile ~/.ssh/id_rsa
+  UseKeychain yes
